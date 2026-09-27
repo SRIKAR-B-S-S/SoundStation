@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+    cursor: none !important;
+    user-select: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    background: url('https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/background.png');
+    background-size: cover;
+}
