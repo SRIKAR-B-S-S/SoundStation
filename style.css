@@ -8,7 +8,81 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-
-    background: url('https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/background.png');
+    background: url('https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/background.jpg');
     background-size: cover;
 }
+
+.win-box {
+    position: absolute;
+    background-color: #f6f5ef;
+    border: 2px solid #4a92ff;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.win-header {
+  background: linear-gradient(
+    to bottom,
+    #0055ea 10%,
+    #0055ea 90%,
+    #002686 100%
+  );
+  color: white;
+  padding: 3px 6px;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  align-items: center;
+  border-radius: 3px 3px 0 0;
+}
+
+.win-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.win-btn {
+    background: linear-gradient(to bottom, #3c93e7 0%, #0058ee 100%);
+    border: 1px solid #7f9db9;
+    font-size: 11px;
+    display: flex;
+    height: 18px;
+    width: 18px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.win-btn.close-btn {
+    background: linear-gradient(to bottom, #f78061 0%, #ae1600 100%);
+}
+
+/* All of the above added lines of code will be reused for the windows which I'll be further adding in my project*/
+/* This is because they can be applicable to be used for any window */
+
+.clock-body {
+    text-align: center;
+}
+
+.time-text {
+    margin-top: 34px;
+    font-family: 'Verdana';
+    font-size: 35px;
+    font-weight: bold;
+    color: #002d96;
+}
+
+.date-text {
+    margin-top: 4px;
+}
+
+.win-clock {
+    top: 20px;
+    right: 20px;
+    width: 260px;
+    height: 180px;
+}
+
+/* Above four styles are for the elements in the System Time window*/

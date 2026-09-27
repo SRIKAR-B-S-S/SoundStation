@@ -7,8 +7,26 @@
 </head>
 <body>
 
-    <!-- will be adding code here from the next commit! -->
+<main>
+    
+    <div class="win-box win-clock"> <!-- Added a window(named it as win-box) which will display Date and Time, actually this is not the main feature of my project, so I shouldn't be adding this first but I just thought to start with the simple feature -->
+        <div class="win-header">
+        <span class="win-title">System Time</span>
+            <div class="win-controls">
+            <span class="win-btn">–</span>
+            <span class="win-btn">☐</span>
+            <span class="win-btn close-btn">✕</span>
+            </div>
+        </div>
 
+    <div class="win-body clock-body">
+        <!-- The time will be displayed here from JS using the IDs of both the divs -->
+        <div class="time-text" id="time-display">12:00 AM</div>
+        <div id="date-display" class="date-text">Sunday, Sep 27, 2026</div>
+    </div>
+</div>
+
+</main>
 <script src="script.js"></script>
 </body>
 </html>
