@@ -8,7 +8,31 @@
 <body>
 
 <main>
-    
+    <!-- Added a window for showing the list of soundtracks below! -->
+    <div class="win-box win-tracks">
+    <div class="win-header">
+        <span class="win-title">Soundtracks</span>
+        <div class="win-controls">
+            <span class="win-btn">–</span>
+            <span class="win-btn">☐</span>
+            <span class="win-btn close-btn">✕</span>
+        </div>
+        </div>
+    <div class="win-body">
+        <ul class="track-list"> <!-- I've added the ist of soundtracks here, inspired from the Background Noises feature on my Lenovo Tab -->
+            <li><span class="key-badge">1</span>Rain<input type="checkbox" id="chck-1" disabled></li>
+            <li><span class="key-badge">2</span>Forest<input type="checkbox" id="chck-2" disabled></li>
+            <li><span class="key-badge">3</span>Night<input type="checkbox" id="chck-3" disabled></li>
+            <li><span class="key-badge">4</span>Dawn<input type="checkbox" id="chck-4" disabled></li>
+            <li><span class="key-badge">5</span>Ocean<input type="checkbox" id="chck-5" disabled></li>
+            <li><span class="key-badge">6</span>Campfire<input type="checkbox" id="chck-6" disabled></li>
+            <li><span class="key-badge">7</span>Cicada<input type="checkbox" id="chck-7" disabled></li>
+            <li><span class="key-badge">8</span>Birds<input type="checkbox" id="chck-8" disabled></li>
+            <li><span class="key-badge">9</span>Farm<input type="checkbox" id="chck-9" disabled></li>
+        </ul>
+    </div>
+</div>
+
     <div class="win-box win-clock"> <!-- Added a window(named it as win-box) which will display Date and Time, actually this is not the main feature of my project, so I shouldn't be adding this first but I just thought to start with the simple feature -->
         <div class="win-header">
         <span class="win-title">System Time</span>

@@ -86,3 +86,32 @@ body {
 }
 
 /* Above four styles are for the elements in the System Time window*/
+
+.win-tracks { /* Properties and positioning for the Soundtracks window */
+    top: 40px;
+    left: 35px;
+    width: 240px;
+    height: 350px;
+}
+
+.track-list {
+    list-style: none; /* removes the dots from the list of soundtracks, giving it a better look */
+}
+
+.track-list li {
+    font-size: 21px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.key-badge { /*named it as key-badge because it shows which key to press to enable that particular audio track */
+    background: #333;
+    color: #fff;
+    font-size: 12px;
+    padding: 1px 5px;
+    border-radius: 3.5px;
+    font-weight: bold;
+}
+/* Above four styles are for Soundtracks window */
