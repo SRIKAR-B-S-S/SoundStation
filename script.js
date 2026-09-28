@@ -20,15 +20,15 @@ setInterval(updateClock, 1000);
 updateClock();
 
 const TRACKS = [ // I will be adding the soundtracks here in my next commit, as I've to find some relating soundtracks from online
-    { id: 1, name: "Rain", src:"", audio: new Audio(""), active: false},
-    {id: 2, name: "Forest", src:"", audio: new Audio(""), active: false},
-    {id: 3, name: "Night", src:"", audio: new Audio(""), active: false},
-    {id: 4, name:"Dawn", src:"", audio: new Audio(""), active: false},
-    {id:5, name:"Ocean", src:"", audio: new Audio(), active: false},
-    {id:6, name:"Campfire", src:"", audio: new Audio(""), active: false},
-    {id:7, name:"Cicada", src:"", audio: new Audio(""), active:false},
-    {id:8, name:"Birds", src:"", audio: new Audio(""), active: false},
-    {id:9, name:"Farm", src:"", audio: new Audio(""), active: false}
+    { id: 1, name: "Rain", src:"https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/audio/rain.mp3", audio: new Audio("https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/audio/rain.mp3"), active: false},
+    {id: 2, name: "Forest", src:"https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/audio/forest.mp3", audio: new Audio("https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/audio/forest.mp3"), active: false},
+    {id: 3, name: "Night", src:"https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/audio/night.mp3", audio: new Audio("https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/audio/night.mp3"), active: false},
+    {id: 4, name:"Dawn", src:"https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/audio/dawn.mp3", audio: new Audio("https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/audio/dawn.mp3"), active: false},
+    {id:5, name:"Ocean", src:"https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/audio/ocean.mp3", audio: new Audio("https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/audio/ocean.mp3"), active: false},
+    {id:6, name:"Campfire", src:"https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/audio/campfire.mp3", audio: new Audio("https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/audio/campfire.mp3"), active: false},
+    {id:7, name:"Cicada", src:"https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/audio/cicada.mp3", audio: new Audio("https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/audio/cicada.mp3"), active:false},
+    {id:8, name:"Birds", src:"https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/audio/birds.mp3", audio: new Audio("https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/audio/birds.mp3"), active: false},
+    {id:9, name:"Farm", src:"https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/audio/farm.mp3", audio: new Audio("https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/audio/farm.mp3"), active: false}
 ];
 
 let activeTrack = TRACKS[0]; //Plays Rain if there's no track selected by the user
