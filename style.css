@@ -115,3 +115,67 @@ body {
     font-weight: bold;
 }
 /* Above four styles are for Soundtracks window */
+
+.win-player {
+    top: 200px;
+    left: 440px;
+    width: 440px;
+    text-align: center;
+    height: 340px;
+}
+
+.player-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vinyl-img {
+    width: 220px;
+    height: 220px;
+    margin-bottom: 12px;
+}
+
+.vinyl-img.paused {
+    filter: grayscale(60%);
+    opacity: 0.8;
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.media-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.media-button {
+    background: linear-gradient(to bottom, #fff, #ece9d8);
+    border: 1px solid #7f9db9;
+    padding: 6px 20px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 3px;
+    box-shadow: inset -1px -1px 1px #a0a0a0;
+}
+
+.key-hint {
+    font-size: 9px;
+    margin-top: 3px;
+    /* padding-left: 10px; */
+    font-weight: bold;
+    color: #7a7a7a;
+    font-family: 'Courier New', monospace;
+}
+
+.volume-status {
+    font-size: 14px;
+    margin-top: 12px;
+    font-weight: bold;
+    font-family: 'Segoe UI';
+    color: #525252;
+}

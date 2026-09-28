@@ -50,6 +50,41 @@
     </div>
 </div>
 
+<!-- Added a new window for displaying the main audio controls and a spinning vinyl gif-->
+<div class="win-box win-player">
+    <div class="win-header">
+        <span class="win-title">Media Player</span>
+        <div class="win-controls">
+            <span class="win-btn">–</span>
+            <span class="win-btn">☐</span>
+            <span class="win-btn close-btn">✕</span>
+        </div>
+    </div>
+
+    <div class="win-body player-body">
+        <img id="vinyl-gif" src="https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/SoundStation-spinning-vinyl.gif" class="vinyl-img paused"> <!-- Thanks to this website for the gif! - https://www.omnigif.com/gif-maker/vinyl-spinning-gif-maker -->
+
+    <div class="controls-row"> <!--Three main controls play/pause and volume+- with their respective key hint below their buttons-->
+        <div class="btn-group">
+            <div class="media-control">
+                <button class="media-button">Vol-</button>
+                <span class="key-hint">down arrow</span>
+            </div>
+            <div class="media-control">
+                <button id="play-button" class="media-button">Play</button>
+                <span class="key-hint">spacebar</span>
+            </div>
+            <div class="media-control">
+                <button class="media-button">Vol+</button>
+                <span class="key-hint">up arrow</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="volume-status">Volume: <b><span id="vol-level">80</span>%</b></div>
+    </div>
+</div>
+
 </main>
 <script src="script.js"></script>
 </body>
