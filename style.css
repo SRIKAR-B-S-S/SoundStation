@@ -116,6 +116,7 @@ body {
 }
 /* Above four styles are for Soundtracks window */
 
+/* Added the styles for Media Player Window below! */
 .win-player {
     top: 200px;
     left: 440px;
@@ -166,7 +167,6 @@ body {
 .key-hint {
     font-size: 9px;
     margin-top: 3px;
-    /* padding-left: 10px; */
     font-weight: bold;
     color: #7a7a7a;
     font-family: 'Courier New', monospace;
