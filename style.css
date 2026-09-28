@@ -179,3 +179,51 @@ body {
     font-family: 'Segoe UI';
     color: #525252;
 }
+
+/* Styles for the guide window below: */
+.info-tab {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    background-color: #f6f5ef;
+    border: 1px solid #4a92ff;
+    border-right: none;
+    padding: 8px 14px;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 13px;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+}
+
+.win-guide {
+    top: 280px;
+    right: 25px;
+    width: 340px;
+}
+
+.win-guide p {
+    margin-left: 8px;
+    font-size: 13.5px;
+    margin-bottom: 8px;
+    font-family: 'Segoe UI';
+}
+
+.guide-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0;
+}
+
+.guide-list li {
+    font-size: 13px;
+    margin-bottom: 8px;
+    font-family: 'Segoe UI';
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hidden {
+    display: none !important;
+}

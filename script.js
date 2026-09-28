@@ -92,7 +92,13 @@ else {
 }
 }
 
-// All the code below is for capturing keypresses for playing the audio and media controls(play/pause & volume)
+// All the code below is for capturing keypresses for playing the audio and media controls(play/pause & volume) & opening the guide
+
+const guideWindow = document.getElementById('guide-window');
+
+function toggleGuide() {
+    guideWindow.classList.toggle('hidden');
+}
 
 window.addEventListener('keydown', (e) => {
 
@@ -115,4 +121,9 @@ window.addEventListener('keydown', (e) => {
         togglePlay();
     }
 
+    else if (e.key === 'Insert') {
+        e.preventDefault();
+        toggleGuide();
+        return;
+    }
 });
