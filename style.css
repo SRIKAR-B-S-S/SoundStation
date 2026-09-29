@@ -235,3 +235,19 @@ body {
 .hidden {
     display: none !important;
 }
+
+/* Key press animations for soundtrack no.s, media buttons and `insert` in the info tab*/
+.media-button.pressed {
+    box-shadow: inset 1px 1px 2px #707070;
+}
+
+.key-badge.pressed {
+    transform: scale(1.15);
+    transition: transform 0.1s ease;
+}
+
+.key-badge.pressed-insertkey {
+    display: inline-block;
+    transform: scale(1.03);
+    transition: transform 0.1s ease;
+}

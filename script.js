@@ -96,6 +96,32 @@ function selectTrack(trackIndex) {
     else {
         track.audio.pause();
     }
+
+    const badge = document.getElementById(`badge-${track.id}`); // triggers css pressed state for the keybadge of soundtrack when its respective key is pressed
+
+    badge.classList.add('pressed');
+    setTimeout(() => {
+        badge.classList.remove('pressed');
+    }, 150);
+}
+
+
+function triggerClick(button) { // Triggers a click animation for the button in the website whenever that element's respective key is pressed on the keyboard irl
+    const btn = document.getElementById(button);
+
+    if (button !== 'insert-key') {
+
+    btn.classList.add('pressed');
+    setTimeout(() => {
+        btn.classList.remove('pressed');
+    }, 150);
+}
+else {
+    btn.classList.add('pressed-insertkey');
+    setTimeout(() => {
+        btn.classList.remove('pressed-insertkey')
+    }, 150);
+}
 }
 
 // All the code below is for capturing keypresses for playing the audio and media controls(play/pause & volume) & opening the guide
@@ -120,20 +146,24 @@ window.addEventListener('keydown', (e) => {
     else if (e.code === 'ArrowUp') {
         e.preventDefault();
         adjustVolume(10);
+        triggerClick('volume-plus-button');
     }
 
     else if (e.code === 'ArrowDown') {
         e.preventDefault();
         adjustVolume(-10);
+        triggerClick('volume-minus-button');
     }
 
     else if (e.code === 'Space') {
         togglePlay();
+        triggerClick('play-button');
     }
 
     else if (e.key === 'Insert') {
         e.preventDefault();
         toggleGuide();
+        triggerClick('insert-key');
         return;
     }
 });
