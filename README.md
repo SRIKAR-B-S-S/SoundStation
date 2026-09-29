@@ -1,10 +1,10 @@
 # SoundStation
 
-<img width="1920" height="904" alt="image" src="https://github.com/user-attachments/assets/3e2e3c43-f984-49f1-b4b7-7f93c9b58c72" />
+<img width="1920" height="903" alt="image" src="https://github.com/user-attachments/assets/61055338-afb8-4bb5-b289-afbe2c1ad7c6" />
 
 
 A keyboard-only ambient sound player themed on 2000s computer aesthetics, featuring a Windows XP-like user interface with multiple windows for soundtracks, media player and a date-time window. SoundStation lets you play multiple soundtracks simultaneously, giving you the best experience of nature at your desk! The website is designed to be very minimalistic without any eye-catching elements, not letting you deviate from your work or studies. A date-time window is also added for the users to keep track of time. SoundStation can only be used with your keyboard, making it a keyboard-only website and it cannot be used with touch/mouse controls or even your tab key.
-
+SoundStation is also interactive and tactile, displaying keypress animations and producing mechanical key-press sound effect while using the website.
   
 
 ## Soundtracks
@@ -45,19 +45,19 @@ You can follow the below guide and in case you are on the website you can access
 ## Gallery
 <details>
 <summary> SoundStation Playing </summary>
-  <img width="1920" height="904" alt="image" src="https://github.com/user-attachments/assets/00327cf3-fe2c-4a08-954c-171ed754e53b" />
+  <img width="1920" height="903" alt="image" src="https://github.com/user-attachments/assets/61055338-afb8-4bb5-b289-afbe2c1ad7c6" />
 </details>
 
 <details>
 <summary> SoundStation Paused </summary>
-  <img width="1920" height="904" alt="image" src="https://github.com/user-attachments/assets/f88528e1-701c-4f82-ac4d-55b105780053" />
+  <img width="1920" height="908" alt="image" src="https://github.com/user-attachments/assets/3c22bfa7-1ebd-4163-b8f8-b69b437b198c" />
 
 
 </details>  
 
 <details>
 <summary> SoundStation with Guide Open </summary>
-  <img width="1920" height="902" alt="image" src="https://github.com/user-attachments/assets/93722826-582e-4c1c-9a22-ca88142e66cb" />
+  <img width="1920" height="905" alt="image" src="https://github.com/user-attachments/assets/94418443-abf7-4ac0-9236-886ab0a9cac0" />
 </details>
 
 ## Built With
@@ -78,7 +78,8 @@ You can follow the below guide and in case you are on the website you can access
 [Cicada](https://pixabay.com/sound-effects/nature-cicada-buzzing-331499/)<br>
 [Birds](https://pixabay.com/sound-effects/nature-forest-nature-322637/)<br>
 [Farm](https://pixabay.com/sound-effects/nature-wind-in-tall-grass-419782/)<br>
-
+[Click Sound Effect 1](https://pixabay.com/sound-effects/film-special-effects-single-mechanical-keyboard-enter-key-press-546557/) <br>
+[Click Sound Effect 2](https://www.youtube.com/watch?v=Tmq-BT7zEVI)
   
 
 --------

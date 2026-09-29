@@ -132,38 +132,52 @@ function toggleGuide() {
     guideWindow.classList.toggle('hidden');
 }
 
+// Added click sound effects for media buttons and selecting soundtracks(keypress audio for selecting soundtracks is slightly different from that of the media buttons and insert key)
+const clickSound = new Audio('./assets/clickSound.mp3');
+const keySound = new Audio('./assets/keySound.mp3');
+
 window.addEventListener('keydown', (e) => {
 
     if (e.ctrlKey || e.metaKey ) { // prevents collision/interference of SoundStation keys with other key-combinations, such as in Chrome I was using the Ctrl+1 to switch between tabs and it has triggered the 1st Soundtrack to play, adding the line would now prevent it
         return;                     // just in case, added the meta key too
     }
 
+    if (e.key === 'Tab') { // doesn't let the tab key work!
+        e.preventDefault();
+        return;
+    }
+
     if (e.key >= '1' && e.key <= '9') {
         const trackIdx = parseInt(e.key) - 1;
         selectTrack(trackIdx);
+        keySound.play();
     }
 
     else if (e.code === 'ArrowUp') {
         e.preventDefault();
         adjustVolume(10);
         triggerClick('volume-plus-button');
+        clickSound.play();
     }
 
     else if (e.code === 'ArrowDown') {
         e.preventDefault();
         adjustVolume(-10);
         triggerClick('volume-minus-button');
+        clickSound.play();
     }
 
     else if (e.code === 'Space') {
         togglePlay();
         triggerClick('play-button');
+        clickSound.play();
     }
 
     else if (e.key === 'Insert') {
         e.preventDefault();
         toggleGuide();
         triggerClick('insert-key');
+        clickSound.play();
         return;
     }
 });
