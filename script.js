@@ -102,6 +102,10 @@ function toggleGuide() {
 
 window.addEventListener('keydown', (e) => {
 
+    if (e.ctrlKey || e.metaKey ) { // prevents collision/interference of SoundStation keys with other key-combinations, such as in Chrome I was using the Ctrl+1 to switch between tabs and it has triggered the 1st Soundtrack to play, adding the line would now prevent it
+        return;                     // just in case, added the meta key too
+    }
+
     if (e.key >= '1' && e.key <= '9') {
         const trackIdx = parseInt(e.key) - 1;
         selectTrack(trackIdx);
