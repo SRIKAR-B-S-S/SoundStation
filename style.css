@@ -106,6 +106,15 @@ body {
     gap: 8px;
 }
 
+.indicator.playing:before { /* displays a small dot indicating that the soundtrack is selected*/
+    content: "•";
+    opacity: 0.6;
+}
+
+.indicator {
+    content: "";
+}
+
 .key-badge { /*named it as key-badge because it shows which key to press to enable that particular audio track */
     background: #333;
     color: #fff;

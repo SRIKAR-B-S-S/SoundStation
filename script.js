@@ -75,21 +75,27 @@ function adjustVolume(change) {
 }
 
 // The below function allows the user to select and play single/multiple tracks simultaneously
+
+// refactor: replaced the previous checkboxes with an indicator dot for a more minimal design
+
 function selectTrack(trackIndex) {
-    
-const track = TRACKS[trackIndex];
-const chck = document.getElementById(`chck-${track.id}`);
+    const track = TRACKS[trackIndex];
+    const indicator = document.getElementById(`in-${track.id}`);
 
-track.active = !track.active;
+    track.active = !track.active
 
-if (chck) chck.checked = track.active;
+    if (indicator.classList.contains('playing')) {
+        indicator.classList.remove('playing');
+    } else {
+        indicator.classList.add('playing');
+    }
 
-if (track.active && isPlaying) {
-    track.audio.play();
-}
-else {
-    track.audio.pause();
-}
+    if (track.active && isPlaying){
+        track.audio.play();
+    }
+    else {
+        track.audio.pause();
+    }
 }
 
 // All the code below is for capturing keypresses for playing the audio and media controls(play/pause & volume) & opening the guide
