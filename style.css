@@ -138,8 +138,7 @@ body {
 }
 
 .vinyl-img.paused {
-    filter: grayscale(60%);
-    opacity: 0.8;
+    content: url('https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/SoundStation-static-vinyl.png'); /* Replaced the spinning vinyl gif with a static vinyl img when the Media Player is pause, previously it the spinning vinyl was greyscaled which is now removed.*/
 }
 
 .btn-group {
