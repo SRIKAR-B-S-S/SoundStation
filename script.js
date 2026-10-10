@@ -50,16 +50,27 @@ function togglePlay() {
 
     if (isPlaying) {
         playBtn.textContent = "Pause";
-        vinylImg.classList.remove('paused');
         TRACKS.forEach(t => {
-            if (t.active) t.audio.play();
+        if (t.active) t.audio.play();
         });
-
+        if (mode === 'spooky') { //changes the vinyl to a spinning one
+            vinylImg.classList.remove('og', 'paused');
+            vinylImg.classList.add('spooky', 'playing');
+        } else {
+            vinylImg.classList.remove('spooky', 'paused');
+            vinylImg.classList.add('og', 'playing');
+        }
     }
     else {
         playBtn.textContent = "Play";
-        vinylImg.classList.add('paused');
         TRACKS.forEach(t => t.audio.pause());
+        if (mode === 'spooky') { //changes the vinyl to a paused one
+            vinylImg.classList.remove('og', 'playing');
+            vinylImg.classList.add('spooky', 'paused');
+        } else {
+            vinylImg.classList.remove('spooky', 'playing');
+            vinylImg.classList.add('og', 'paused');
+        }
     }
 }
 
@@ -141,21 +152,47 @@ const modeIconID = document.getElementById('modeIcon');
 const body = document.getElementById('bodyID');
 
 function toggleMode() {
-    if (mode === 'halo') {
+    if (mode === 'halo') { //from halo --> spooky
         mode = 'spooky';
         modeIconID.classList.toggle('halo');
         modeIconID.classList.toggle('spooky');
         body.classList.toggle('halo');
         body.classList.toggle('spooky');
+        if (isPlaying) { //chnages the vinyl when the user switches between modes(Halo and Spooky), also wrt if the audio is playing or paused as we have a spinning vinyl and a static one
+            vinylImg.classList.add('spooky', 'playing');
+            vinylImg.classList.remove('halo');
+        } else {
+            vinylImg.classList.add('spooky', 'paused');
+            vinylImg.classList.remove('halo');
+        }
+        // changes the colours of the window background, title, border and names of soundtracks
+        document.documentElement.style.setProperty('--window-bg', '#707b85b7');
+        document.documentElement.style.setProperty('--window-title', '#ff7d7d');
+        document.documentElement.style.setProperty('--window-border', '#dcdcdc5b');
+        document.documentElement.style.setProperty('--soundtracks', 'rgb(252, 226, 226)');
     }
-    else if (mode === 'spooky') {
+    else if (mode === 'spooky') { //from spooky --> halo
         mode = 'halo';
         modeIconID.classList.toggle('spooky');
         modeIconID.classList.toggle('halo');
         body.classList.toggle('halo');
         body.classList.toggle('spooky');
+        if (isPlaying) {
+            vinylImg.classList.add('halo', 'playing');
+            vinylImg.classList.remove('spooky');
+        } else {
+            vinylImg.classList.add('halo', 'paused');
+            vinylImg.classList.remove('spooky');
+        }
+        //in the same way as the user switched from halo to spooky, the colours change when switched from spooky to halo
+        document.documentElement.style.setProperty('--window-bg', '#4b4b4b');
+        document.documentElement.style.setProperty('--window-title', 'white');
+        document.documentElement.style.setProperty('--window-border', '#6e6e6e');
+        document.documentElement.style.setProperty('--soundtracks', 'whitesmoke');
     }
 }
+
+const jumpscare = new Audio('./assets/jumpscare.mp3');
 
 window.addEventListener('keydown', (e) => {
 
@@ -196,6 +233,7 @@ window.addEventListener('keydown', (e) => {
 
     else if (e.key === '0') {
         toggleMode();
+        jumpscare.play(); //plays the jumpscare audio
     }
     
     else if (e.key === 'Insert') {

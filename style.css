@@ -4,6 +4,14 @@
     user-select: none;
 }
 
+:root { /*added this for the ease of modifying styles from JS*/
+    --window-bg: #4b4b4b;
+    --window-header: #363636;
+    --window-title: white;
+    --window-border: #6e6e6e;
+    --soundtracks: whitesmoke;
+}
+
 body.halo {
     width: 100vw;
     height: 100vh;
@@ -26,19 +34,14 @@ body.spooky {
 
 .win-box {
     position: absolute;
-    background-color: #f6f5ef;
-    border: 2px solid #4a92ff;
+    background-color: var(--window-bg);
+    border: 2px solid var(--window-border);
     border-radius: 3px 3px 0 0;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .win-header {
-  background: linear-gradient(
-    to bottom,
-    #0055ea 10%,
-    #0055ea 90%,
-    #002686 100%
-  );
+  background: var(--window-header);
   color: white;
   padding: 3px 6px;
   font-size: 13px;
@@ -49,14 +52,19 @@ body.spooky {
   border-radius: 3px 3px 0 0;
 }
 
+.win-title {
+    color: var(--window-title);
+   font-family: 'Trebuchet MS';
+}
+
 .win-controls {
     display: flex;
     gap: 2px;
 }
 
 .win-btn {
-    background: linear-gradient(to bottom, #3c93e7 0%, #0058ee 100%);
-    border: 1px solid #7f9db9;
+    background: #313131;
+    border: 1.5px solid #585858;
     font-size: 11px;
     display: flex;
     height: 18px;
@@ -68,7 +76,7 @@ body.spooky {
 }
 
 .win-btn.close-btn {
-    background: linear-gradient(to bottom, #f78061 0%, #ae1600 100%);
+    background: linear-gradient(to bottom, #f78061 0%, #ac2611 100%);
 }
 
 /* All of the above added lines of code will be reused for the windows which I'll be further adding in my project*/
@@ -83,10 +91,11 @@ body.spooky {
     font-family: 'Verdana';
     font-size: 35px;
     font-weight: bold;
-    color: #002d96;
+    color: #e3e2e2;
 }
 
 .date-text {
+    color: #dcdcdc;
     margin-top: 4px;
 }
 
@@ -111,6 +120,7 @@ body.spooky {
 }
 
 .track-list li {
+    color: var(--soundtracks);
     font-size: 21px;
     margin-bottom: 6px;
     display: flex;
@@ -128,12 +138,14 @@ body.spooky {
 }
 
 .key-badge { /*named it as key-badge because it shows which key to press to enable that particular audio track */
-    background: #333;
-    color: #fff;
+    background: #9b9b9b;
+    color: #333;
+    font-family: monospace;
     font-size: 12px;
     padding: 1px 5px;
     border-radius: 3.5px;
     font-weight: bold;
+    border: 0.5px solid #dcdcdc;
 }
 /* Above four styles are for Soundtracks window */
 
@@ -158,8 +170,21 @@ body.spooky {
     margin-bottom: 12px;
 }
 
-.vinyl-img.paused {
-    content: url('https://raw.githubusercontent.com/SRIKAR-B-S-S/SoundStation/main/assets/SoundStation-static-vinyl.png'); /* Replaced the spinning vinyl gif with a static vinyl img when the Media Player is pause, previously it the spinning vinyl was greyscaled which is now removed.*/
+/* Added new classes for two themes and their play/pause states*/
+.vinyl-img.halo.paused {
+    content: url('./assets/SoundStation-static-vinyl.png'); /* Replaced the spinning vinyl gif with a static vinyl img when the Media Player is pause, previously it the spinning vinyl was greyscaled which is now removed.*/
+}
+
+.vinyl-img.spooky.paused {
+    content: url('./assets/skull-static-vinyl.png');
+}
+
+.vinyl-img.halo.playing {
+    content: url('./assets/SoundStation-spinning-vinyl.gif');
+}
+
+.vinyl-img.vinyl-img.spooky.playing {
+    content: url('./assets/skull-spinning-vinyl.gif');
 }
 
 .btn-group {
@@ -188,7 +213,7 @@ body.spooky {
     font-size: 9px;
     margin-top: 3px;
     font-weight: bold;
-    color: #7a7a7a;
+    color: #9b9a9a;
     font-family: 'Courier New', monospace;
 }
 
@@ -197,7 +222,7 @@ body.spooky {
     margin-top: 12px;
     font-weight: bold;
     font-family: 'Segoe UI';
-    color: #525252;
+    color: #cbcbcb;
 }
 
 /* Styles for the guide window below: */
@@ -205,7 +230,7 @@ body.spooky {
     position: absolute;
     bottom: 20px;
     right: 0;
-    background-color: #f6f5ef;
+    background-color: #dcdcdc;
     border: 1px solid #4a92ff;
     border-right: none;
     padding: 8px 14px;
@@ -213,6 +238,7 @@ body.spooky {
     font-size: 13px;
     font-family: 'Segoe UI';
     font-weight: bold;
+    color: #1f1f1f;
 }
 
 .win-guide {
@@ -222,6 +248,7 @@ body.spooky {
 }
 
 .win-guide p {
+    color: #e2e2e2;
     margin-left: 8px;
     font-size: 13.5px;
     margin-bottom: 8px;
@@ -229,6 +256,7 @@ body.spooky {
 }
 
 .guide-list {
+    color: #e2e2e2;
     list-style: none;
     padding-left: 0;
     margin: 10px 0;
