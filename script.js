@@ -136,6 +136,27 @@ function toggleGuide() {
 const clickSound = new Audio('./assets/clickSound.mp3');
 const keySound = new Audio('./assets/keySound.mp3');
 
+let mode = 'halo';
+const modeIconID = document.getElementById('modeIcon');
+const body = document.getElementById('bodyID');
+
+function toggleMode() {
+    if (mode === 'halo') {
+        mode = 'spooky';
+        modeIconID.classList.toggle('halo');
+        modeIconID.classList.toggle('spooky');
+        body.classList.toggle('halo');
+        body.classList.toggle('spooky');
+    }
+    else if (mode === 'spooky') {
+        mode = 'halo';
+        modeIconID.classList.toggle('spooky');
+        modeIconID.classList.toggle('halo');
+        body.classList.toggle('halo');
+        body.classList.toggle('spooky');
+    }
+}
+
 window.addEventListener('keydown', (e) => {
 
     if (e.ctrlKey || e.metaKey ) { // prevents collision/interference of SoundStation keys with other key-combinations, such as in Chrome I was using the Ctrl+1 to switch between tabs and it has triggered the 1st Soundtrack to play, adding the line would now prevent it
@@ -173,6 +194,10 @@ window.addEventListener('keydown', (e) => {
         clickSound.play();
     }
 
+    else if (e.key === '0') {
+        toggleMode();
+    }
+    
     else if (e.key === 'Insert') {
         e.preventDefault();
         toggleGuide();
