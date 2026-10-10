@@ -11,7 +11,7 @@
     <!-- Added a window for showing the list of soundtracks below! -->
     <div class="win-box win-tracks">
     <div class="win-header">
-        <span class="win-title">Soundtracks</span>
+        <div class="win-title">Soundtracks<img class="win-icon hidden" id="error1" src="./assets/error-icon.png"></div>
         <div class="win-controls">
             <span class="win-btn">–</span>
             <span class="win-btn">☐</span>
@@ -35,7 +35,7 @@
 
     <div class="win-box win-clock"> <!-- Added a window(named it as win-box) which will display Date and Time, actually this is not the main feature of my project, so I shouldn't be adding this first but I just thought to start with the simple feature -->
         <div class="win-header">
-        <span class="win-title">System Time</span>
+        <div class="win-title">System Time<img class="eye-icon hidden" id="eye" src="./assets/eye-jpeg.png"></div>
             <div class="win-controls">
             <span class="win-btn">–</span>
             <span class="win-btn">☐</span>
@@ -53,7 +53,7 @@
 <!-- Added a new window for displaying the main audio controls and a spinning vinyl gif-->
 <div class="win-box win-player">
     <div class="win-header">
-        <span class="win-title">Media Player</span>
+        <div class="win-title">Media Player<img class="win-icon hidden" id="error2" src="./assets/error-icon.png"></div>
         <div class="win-controls">
             <span class="win-btn">–</span>
             <span class="win-btn">☐</span>
@@ -110,6 +110,10 @@
 
 <div class="toggleDiv">
     <img id="modeIcon" class="mode-icon halo">
+</div>
+
+<div class="you-cant-escape hidden" id="yce">
+    <span class="yce-text">You can't escape the Dark Hours...</span>
 </div>
 
 </main>

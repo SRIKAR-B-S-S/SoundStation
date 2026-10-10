@@ -150,14 +150,17 @@ const keySound = new Audio('./assets/keySound.mp3');
 let mode = 'halo';
 const modeIconID = document.getElementById('modeIcon');
 const body = document.getElementById('bodyID');
+const errIcon1 = document.getElementById('error1');
+const errIcon2 = document.getElementById('error2');
+const eyeIcon = document.getElementById('eye');
 
 function toggleMode() {
     if (mode === 'halo') { //from halo --> spooky
         mode = 'spooky';
-        modeIconID.classList.toggle('halo');
-        modeIconID.classList.toggle('spooky');
-        body.classList.toggle('halo');
-        body.classList.toggle('spooky');
+        modeIconID.classList.remove('halo');
+        modeIconID.classList.add('spooky');
+        body.classList.remove('halo');
+        body.classList.add('spooky');
         if (isPlaying) { //chnages the vinyl when the user switches between modes(Halo and Spooky), also wrt if the audio is playing or paused as we have a spinning vinyl and a static one
             vinylImg.classList.add('spooky', 'playing');
             vinylImg.classList.remove('halo');
@@ -170,13 +173,17 @@ function toggleMode() {
         document.documentElement.style.setProperty('--window-title', '#ff7d7d');
         document.documentElement.style.setProperty('--window-border', '#dcdcdc5b');
         document.documentElement.style.setProperty('--soundtracks', 'rgb(252, 226, 226)');
+        errIcon1.classList.remove('hidden');
+        errIcon2.classList.remove('hidden');
+        eyeIcon.classList.remove('hidden');
+        // the above three lines will show the error and eye icons beside the window titles in the Spooky Mode
     }
     else if (mode === 'spooky') { //from spooky --> halo
         mode = 'halo';
-        modeIconID.classList.toggle('spooky');
-        modeIconID.classList.toggle('halo');
-        body.classList.toggle('halo');
-        body.classList.toggle('spooky');
+        modeIconID.classList.remove('spooky');
+        modeIconID.classList.add('halo');
+        body.classList.add('halo');
+        body.classList.remove('spooky');
         if (isPlaying) {
             vinylImg.classList.add('halo', 'playing');
             vinylImg.classList.remove('spooky');
@@ -189,10 +196,36 @@ function toggleMode() {
         document.documentElement.style.setProperty('--window-title', 'white');
         document.documentElement.style.setProperty('--window-border', '#6e6e6e');
         document.documentElement.style.setProperty('--soundtracks', 'whitesmoke');
+        errIcon1.classList.add('hidden');
+        errIcon2.classList.add('hidden');
+        eyeIcon.classList.add('hidden');
     }
 }
 
+// The time between 12AM - 4AM is considered as dark hours when it will display the Spooky mode as soon as the user enters the website
+function darkHours() {
+    const now = new Date();
+    const hours = now.getHours(); // gives 24hr time formatted hours
+    if ((hours >= 0 && hours <= 4)) { // if hours are b/w 0(12AM) and 4AM
+        if (mode === 'halo') { // if the website loads in Halo mode, switch it to Spooky mode
+            toggleMode();
+        } 
+        else if (mode === 'spooky') { // if it's alr in spooky mode, leave it..
+
+        }
+    }
+}
+
+darkHours();
+
+function isDarkHours() { //will check if the current hours are darkhours or not, returns true or false.
+    const now = new Date();
+    const hours = now.getHours();
+    return hours >=0 && hours <4;
+}
+
 const jumpscare = new Audio('./assets/jumpscare.mp3');
+const YCEdiv = document.getElementById('yce'); //gets the div of the You Can't Escape Dark Hours message
 
 window.addEventListener('keydown', (e) => {
 
@@ -232,8 +265,15 @@ window.addEventListener('keydown', (e) => {
     }
 
     else if (e.key === '0') {
-        toggleMode();
-        jumpscare.play(); //plays the jumpscare audio
+        if (isDarkHours()) { //if its the dark hours are the user tries to change the mode of the website using the 0 key..
+            YCEdiv.classList.remove('hidden'); // then it displays the YCE message
+            setTimeout(() => {
+                YCEdiv.classList.add('hidden');
+            }, 1500);
+        } else { //if its not dark hours, the website functions as usual
+            toggleMode();
+            jumpscare.play(); //plays the jumpscare audio
+        }
     }
     
     else if (e.key === 'Insert') {
