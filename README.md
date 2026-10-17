@@ -22,3 +22,6 @@ HTML and CSS are used for the frontend and the website is heavily dependent on J
 
 ## Where I struggled & What I enjoyed
 The biggest challenge was implementing the songs playback and especially the part of simulatoneous playback of audio. I also stuggled a lot in selected colours for the Halo and Spooky modes! I loved adding spooky features to the website and I've done a lot of brainstroming thinking about spooky ideas to implement and searching for the best relatable icons/images on the internet.
+
+## AI Declaration
+No AI Usage
